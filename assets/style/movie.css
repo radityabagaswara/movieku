@@ -1,6 +1,6 @@
 .movie__container {
   min-height: 100vh;
-  margin: 4rem 15rem;
+  margin: 4rem 20rem;
 }
 
 .movie__header {
@@ -104,8 +104,8 @@
 .movie__pemain__card {
   display: flex;
   margin-right: 10px;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 250px;
+  max-width: 250px;
   min-height: 330px;
   position: relative;
   display: block;
@@ -135,6 +135,6 @@
 .movie__pemain__wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   flex-wrap: wrap;
 }

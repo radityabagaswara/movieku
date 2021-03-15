@@ -1,6 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .container__wrapper {
@@ -10,10 +11,8 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
   min-height: 100vh;
-  margin: 4rem 20rem;
+  margin: 0 20rem;
 }
 
 .container__content {
@@ -61,12 +60,7 @@ footer div {
 
 a {
   text-decoration: unset !important;
-  color: #00273d;
-}
-
-a:visited {
-  text-decoration: unset !important;
-  color: #00273d;
+  color: #00273d !important;
 }
 
 a:hover {
@@ -91,19 +85,11 @@ th {
 }
 
 td a {
-  color: rgba(6, 164, 255) !important;
+  color: rgba(6, 164, 255);
 }
 
 td a:hover {
-  color: #00273d !important;
-}
-
-input {
-  padding: 10px 20px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  box-sizing: border-box;
+  color: #00273d;
 }
 
 table {
@@ -211,4 +197,28 @@ table {
 }
 .mt-5 {
   margin-top: 5.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 2.5rem;
+}
+.mb-3 {
+  margin-bottom: 3.5rem;
+}
+.mb-4 {
+  margin-bottom: 4.5rem;
+}
+.mb-5 {
+  margin-bottom: 5.5rem;
+}
+
+.page-header h4::after{
+  content: " ";
+  width: 100%;
+  border-bottom: 1px solid #212121;
+  height: 5px;
+  display: block;
 }

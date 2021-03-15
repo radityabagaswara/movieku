@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="movie__container movie">
+    <div class="container movie">
         <div class="movie__header">
             <h3>Owari no Seraph</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -41,11 +41,9 @@
                         <h3>Rating</h3>
                         <p>
                             <span>
-                                <img src="https://www.freepnglogos.com/uploads/star-png/file-gold-star-svg-wikimedia-commons-9.png"
-                                    width="25px">
+                                <strong style="font-size: 22px">9.5</strong><small>/10</small>
                             </span>
-                            <strong style="font-size: 24px">9.5</strong>
-                            <small>/10</small>
+
                         </p>
                     </div>
                     <div class="movie__info__small__content">
@@ -64,8 +62,7 @@
                             age of 13, mankind becomes enslaved by previously hidden, power-hungry vampires who emerge
                             in order to subjugate society with the promise of protecting the survivors, in exchange for
                             donations of their blood.
-                            <span id="readmore" class="sinopsis__readmore"><a>Read more...</a></span><span
-                                id="sinopsis-toggle" class="sinopsis__toggle">Many years later, now a member of the
+                            <span id="readmore" class="sinopsis__readmore"><a>Read more...</a></span><span id="sinopsis-toggle" class="sinopsis__toggle">Many years later, now a member of the
                                 Japanese Imperial Demon Army, Yuuichirou is determined to take revenge on the creatures
                                 that slaughtered his family, but at what cost?
                                 Among these survivors are Yuuichirou and Mikaela Hyakuya, two young boys who are taken
@@ -147,10 +144,10 @@
         </div>
     </div>
     <script>
-    $('#readmore').on('click', function() {
-        $('#readmore').toggleClass("toggled");
-        $('#sinopsis-toggle').toggleClass("toggled");
-    })
+        $('#readmore').on('click', function() {
+            $('#readmore').toggleClass("toggled");
+            $('#sinopsis-toggle').toggleClass("toggled");
+        })
     </script>
 </body>
 
