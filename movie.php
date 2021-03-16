@@ -43,7 +43,6 @@
                             <span>
                                 <strong style="font-size: 22px">9.5</strong><small>/10</small>
                             </span>
-
                         </p>
                     </div>
                     <div class="movie__info__small__content">

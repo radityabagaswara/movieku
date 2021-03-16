@@ -32,7 +32,7 @@ if (isset($_POST['btn_submit'])) {
 
 
     foreach ($genre as $id_genre) {
-        $mv->insert_genre_movie($movie_id, $id_genre);
+        $mv->insert_genre_movie($movie_id, (int)$id_genre);
     }
 
     foreach ($pemain as $key => $value) {

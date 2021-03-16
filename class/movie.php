@@ -20,11 +20,12 @@ class Movie extends Connection
 
     public static function insert_genre_movie($id_movie, $id_genre)
     {
+        // self::$db->query("INSERT INTO genres_movies (genres_id, movies_id) VALUES ($id_movie, $id_genre)");
         $query = "INSERT INTO genres_movies (genres_id, movies_id) VALUES (?,?)";
         $stmt = self::$db->prepare($query);
-        $stmt->bind_param("ii", $id_movie, $id_genre);
+        $stmt->bind_param("ii", $id_genre, $id_movie);
 
-        return $stmt->execute();
+        var_dump($stmt->execute());
     }
 
     public static function insert_chara_movie($id_chara, $id_movie, $char_name, $char_role)
