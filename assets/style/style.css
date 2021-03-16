@@ -1,7 +1,10 @@
+*{
+    box-sizing: border-box;
+}
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  box-sizing: border-box;
+
 }
 
 .container__wrapper {
@@ -108,18 +111,17 @@ table {
 }
 
 .btn {
-  background-color: rgba(6, 164, 255, 0.267);
-  border: 1px solid #ccc;
-  width: 100px;
+  background-color: #5a366b;
   padding: 10px;
-  border-radius: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  color: #fff !important;
 }
 
 .btn:hover {
   cursor: pointer;
-  background-color: #edffff;
+  background-color: #eeccff;
+  color: #5a366b !important;
 }
 
 .btn-secondary {
@@ -161,6 +163,7 @@ table {
 .box-shadow {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 15px;
+
 }
 
 .m-1 {
@@ -215,6 +218,22 @@ table {
   margin-bottom: 5.5rem;
 }
 
+.ml-1 {
+  margin-left: 0.5rem;
+}
+.ml-2 {
+  margin-left: 2.5rem;
+}
+.ml-3 {
+  margin-left: 3.5rem;
+}
+.ml-4 {
+  margin-left: 4.5rem;
+}
+.ml-5 {
+  margin-left: 5.5rem;
+}
+
 .page-header h4::after{
   content: " ";
   width: 100%;
@@ -222,3 +241,37 @@ table {
   height: 5px;
   display: block;
 }
+
+
+.input-group{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    border: 1px solid #e5e5e5;
+}
+
+.input-group-prepend{
+    display: flex;
+    margin-right: 1rem;
+}
+.input-group-text{
+    margin: auto;
+    margin-left: 1rem;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    margin-bottom: 0;
+    border:none !important;
+}
+
+input:focus{
+    outline: none !important;
+}
+
