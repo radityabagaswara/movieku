@@ -1,0 +1,103 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 100%;
+	min-height: 80vh;
+	margin: 0 20px;
+}
+form {
+	width: 75%;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 0 30px 2px rgb(0 0 0 / 7%);
+}
+
+textarea {
+	resize: vertical;
+	min-height: 300px;
+}
+
+label {
+	font-size: 18px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc !important;
+	border-radius: 8px;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif
+}
+
+.group-pemain {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.group-pemain>div {
+	margin: 20px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+	box-shadow: 0 0 2px 2px rgba(6, 164, 255, 0.267);
+	transition: 0.2s;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+button {
+	border: 1px solid #ccc;
+	width: 100px;
+	height: 30px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #ccc;
+}
+
+.group {
+	margin: 20px 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.button-submit {
+	text-align: center;
+}
+
+.check__container {
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.input[type="checkbox"]:hover,
+.check__container label {
+	cursor: pointer;
+	;
+}
+
+.input-group {
+	display: block;
+	padding: 10px 20px;
+}
+
+.hidden{
+    display: none;
+}
