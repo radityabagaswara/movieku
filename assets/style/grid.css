@@ -15,22 +15,24 @@ form{
 .item__wrapper{
     position: relative;
     background-color: #fff;
-    min-width: 200px;
-    max-width: 200px;
+    width: 200px;
     margin: 20px 20px;
 }
 
 .item__image img{
+    width: 200px;
+    height: 281px;
     cursor: pointer;
-    width: 100%;
-    border-radius: 1rem;
     transition: all 0.2s ease;
-
+    object-fit: cover;
 }
 
 .item__content__image{
+    width: 200px;
+    height: 281px;
     transition: all 0.2s ease;
     background-color: #212121;
+
 }
 
 .item__content__image:hover{

@@ -204,3 +204,38 @@ input:focus{
     outline: none !important;
 }
 
+ul.page {
+  list-style-type: none;
+}
+
+ul.page li {
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+ul.page a {
+  color: #000;
+}
+
+ul.page p {
+  margin: unset;
+}
+
+ul.page a.active {
+  color: #5e72e4 !important;
+}
+
+.pagination{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.pagination ul {
+    margin-left: auto !important;
+
+}
+
+

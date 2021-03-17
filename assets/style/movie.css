@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 400px;
+  width: 35rem;
   padding: 25px 20px;
   margin-bottom: 50px;
 }
@@ -67,7 +67,10 @@
 .movie li {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 5px;
+}
+
+.movie li{
+  margin: 1rem 0;
 }
 
 .movie li > strong {

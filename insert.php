@@ -16,6 +16,15 @@
 include_once('./class/movie.php');
 $movie = new Movie();
 $artist = $movie->get_artist();
+
+if (isset($_GET['success'])) {
+    $is_success = $_GET['success'] == "1" ? true : false;
+
+    if ($is_success)
+        echo "<script> alert('Movie successfully inputed!')</script>";
+    else
+        echo "<script> alert('Error while trying to input!')</script>";
+}
 ?>
 
 <body>
