@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <div id="navbar"></div>
     <div class="container">
         <form method="POST" action="addartist_process.php" enctype="multipart/form-data">
             <div class="group">
@@ -47,6 +48,15 @@
             </div>
         </form>
     </div>
+    <div id="foot"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $("#navbar").load("navbar.html");
+            $('#foot').load('footer.html')
+            window.scrollTo(0, 0);
+        });
+    </script>
 </body>
 
 </html>

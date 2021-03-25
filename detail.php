@@ -37,7 +37,13 @@ $genre = Movie::get_movie_genre($mv_id);
 
 
 <body>
+    <div id="navbar"></div>
     <div class="container movie">
+        <div class="back">
+            <a class="btn btn-secondary" onclick="back()">
+                ⬅ Back
+            </a>
+        </div>
         <div class="movie__header">
             <h3><?php echo $selected["name"] ?></h3>
             <hr>
@@ -119,6 +125,19 @@ $genre = Movie::get_movie_genre($mv_id);
             $('#readmore').toggleClass("toggled");
             $('#sinopsis-toggle').toggleClass("toggled");
         })
+    </script>
+    <div id="foot"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $("#navbar").load("navbar.html");
+            $('#foot').load('footer.html')
+            window.scrollTo(0, 0);
+        });
+
+        function back() {
+            history.back();
+        }
     </script>
 </body>
 

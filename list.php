@@ -33,7 +33,7 @@ if (isset($_POST['search'])) {
 </head>
 
 <body>
-
+    <div id="navbar"></div>
     <div class="container">
         <div class="mt-3 mb-3">
             <h3>Explore Movie</h3>
@@ -111,7 +111,15 @@ if (isset($_POST['search'])) {
             </ul>
         </div>
     </div>
-
+    <div id="foot"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $("#navbar").load("navbar.html");
+            $('#foot').load('footer.html')
+            window.scrollTo(0, 0);
+        });
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-Edit Movie
+~~Edit Movie~~
 ~~Show Detail~~
 ~~Show Grid~~
 ~~Show List~~

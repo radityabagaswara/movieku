@@ -1,12 +1,10 @@
-<!-- GRID -->
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
 include_once("./class/movie.php");
 
 $m = new Movie();
-$data_per_page = 10;
+$data_per_page = 5;
 
 $total_page = !isset($_GET['search']) ? Movie::get_total_page($data_per_page) : Movie::get_total_page($data_per_page, $_GET['search']);
 $current = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -23,6 +21,13 @@ if (isset($_GET['search'])) {
 if (isset($_POST['search'])) {
     header("location: ?search=" . $_POST['search']);
 }
+
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == '1')
+        echo "<script>alert('Data Deleted!')</script>";
+    else
+        echo "<script>alert('ERROR! while deleting data.')</script>";
+}
 ?>
 
 <head>
@@ -30,7 +35,7 @@ if (isset($_POST['search'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./assets/style/style.css" rel="stylesheet">
-    <link href="./assets/style/grid.css" rel="stylesheet">
+    <link href="./assets/style/list.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -38,7 +43,7 @@ if (isset($_POST['search'])) {
     <div id="navbar"></div>
     <div class="container">
         <div class="mt-3 mb-3">
-            <h3>Explore Movie</h3>
+            <h3>Admin</h3>
             <form method="POST">
                 <div class="input-group mt-1">
                     <div class="input-group-prepend">
@@ -53,36 +58,29 @@ if (isset($_POST['search'])) {
                 </div>
             </form>
         </div>
-        <div class="page-header">
-            <h3>For You!</h3>
-        </div>
-
-        <div class="grid__wrapper">
-            <?php
-            foreach ($data as $key => $value) { ?>
-                <div class="item__wrapper">
-                    <a href="detail.php?movie=<?php echo $value['id'] ?>">
-                        <div class="item__content__image">
-                            <div class="item__image">
-                                <img src="upload/poster/<?php echo $value['poster'] ?>">
-                            </div>
-                            <div class="item__synopsis">
-                                <div class="item__synopsis__content text-center">
-                                    <h4><?php echo $value['name'] ?></h4>
-                                    <small><?php echo $value['release_date'] ?></small>
-                                    <p><?php echo substr($value['synopsis'], 0, 100) ?></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item__content text-center">
-                            <h4><?php echo $value['name'] ?></h4>
-                            <small><?php echo implode(", ", Movie::get_movie_genre($value['id'])) ?></small>
-                        </div>
-                    </a>
-                </div>
-            <?php
-            }
-            ?>
+        <div class="list__wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Realase Date</th>
+                        <th>Genre</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data as $key => $value) { ?>
+                        <tr>
+                            <td class="text-center"><img src="upload/poster/<?php echo $value['poster'] ?>" width=100px></td>
+                            <td><?php echo $value['name'] ?></td>
+                            <td class="text-center"><?php echo $value['release_date'] ?></td>
+                            <td><?php echo implode(", ", Movie::get_movie_genre($value['id'])) ?></td>
+                            <td class="text-center"><a class="btn btn-primary" href="edit.php?movie=<?php echo $value['id'] ?>" target="_blank">Edit</a><a class="btn btn-danger ml-1" href="delete.php?movie=<?php echo $value['id'] ?>">Delete</a></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
         <div class="pagination">
             <ul class="page">
@@ -113,10 +111,8 @@ if (isset($_POST['search'])) {
                 <?php }
                 if ($total_page > 1) {
                 ?>
-                    <?php
-                    if ($current != $total_page) { ?>
-                        <li><a href='<?php echo $url . $next ?>'>></a></li>
-                    <?php } ?>
+                    <li><a href='<?php echo $url . $next ?>'>></a></li>
+
                     <li>
                         <p>...</p>
                     </li>

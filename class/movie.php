@@ -104,7 +104,7 @@ class Movie extends Connection
     {
         $arr = array();
 
-        $query = 'SELECT a.name as artist_name, a.photo as artist_photo, c.character_name, c.character_role FROM artist_movies c INNER JOIN artist a ON a.id = c.artist_id INNER JOIN movies m ON m.id = c.movies_id WHERE m.id = ?';
+        $query = 'SELECT a.id as artist_id, a.name as artist_name, a.photo as artist_photo, c.character_name, c.character_role FROM artist_movies c INNER JOIN artist a ON a.id = c.artist_id INNER JOIN movies m ON m.id = c.movies_id WHERE m.id = ?';
         $stmt = self::$db->prepare($query);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -184,5 +184,49 @@ class Movie extends Connection
         }
 
         return $arr;
+    }
+
+    public static function delete_artist_movies($id)
+    {
+        $query = "DELETE FROM artist_movies WHERE movies_id = ?";
+        $stmt = self::$db->prepare($query);
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
+    }
+
+    public static function delete_genre_movies($id)
+    {
+        $query = "DELETE FROM genres_movies WHERE movies_id = ?";
+        $stmt = self::$db->prepare($query);
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
+    }
+
+    public static function delete_movie($id)
+    {
+        self::delete_artist_movies($id);
+        self::delete_genre_movies($id);
+
+        $query = "DELETE FROM movies WHERE id = ?";
+        $stmt = self::$db->prepare($query);
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
+    }
+
+    public static function update_movie($id, $judul, $synopsis, $rating, $rilis, $serial, $poster)
+    {
+        if ($poster != null) {
+            $query = "UPDATE movies SET name=?, synopsis=?, rating=?, release_date=?, is_serial=?, poster=? WHERE id = ?";
+            $stmt = self::$db->prepare($query);
+            $stmt->bind_param("ssdsisi", $judul, $synopsis, $rating, $rilis, $serial, $poster, $id);
+            return $stmt->execute();
+        } else {
+            $query = "UPDATE movies SET name=?, synopsis=?, rating=?, release_date=?, is_serial=? WHERE id = ?";
+            $stmt = self::$db->prepare($query);
+            $stmt->bind_param("ssdsii", $judul, $synopsis, $rating, $rilis, $serial, $id);
+            return $stmt->execute();
+        }
+
+        return false;
     }
 }
