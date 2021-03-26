@@ -237,25 +237,42 @@ input:focus{
 
 ul.page {
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul.page li {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 5px;
-  border: 1px solid #ccc;
-  padding: 5px;
-}
-
-ul.page a {
+  border: 1px solid #dee2e6;
   color: #000;
+  border-radius: 100%;
+  width: 36px;
+  height: 36px;
+  box-shadow: rgba(145, 142, 165, 0.1) 0px 20px 25px -5px, rgba(145, 142, 165, 0.4) 0px 10px 10px -5px;
 }
 
-ul.page p {
-  margin: unset;
+ul.page li:hover{
+  background-color: #6e59e6;
 }
 
-ul.page a.active {
-  color: #5e72e4 !important;
+ul.page a, ul.page p {
+  color: #000 !important;
+  padding: 6px 12px;
+  line-height: 1.428571429;
+  margin: 0;
+}
+
+ul.page li.active{
+  color: #fff !important;
+  background-color: #5c4ac7;
+
+}
+ul.page li.active a, ul.page li:hover a{
+  color: #fff !important;
 }
 
 .pagination{
@@ -266,7 +283,7 @@ ul.page a.active {
 
 .pagination ul {
   margin-left: auto !important;
-}
+} 
 
 table {
   border-collapse: collapse;
@@ -349,4 +366,33 @@ footer{
   padding: 1rem 5rem;
   background-color: #fff;
   border-top: 1px solid #ccc;
+}
+
+.views{
+  display:flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.views p {
+  margin: 0;
+  padding: 0;
+}
+
+.views ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.views ul > li {
+  margin: 0 10px;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.admin-controll > a{
+  margin: 0 5px;
 }

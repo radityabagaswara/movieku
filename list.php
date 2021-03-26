@@ -29,12 +29,19 @@ if (isset($_POST['search'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./assets/style/style.css" rel="stylesheet">
     <link href="./assets/style/list.css" rel="stylesheet">
-    <title>Document</title>
+    <title>MovieKu - Database Film dari semua negara!</title>
 </head>
 
 <body>
     <div id="navbar"></div>
     <div class="container">
+        <div class="views">
+            <ul>
+                <span>Views</span>
+                <li><a href="index.php"><img src="https://img.icons8.com/metro/26/000000/activity-grid-2.png"></a></li>
+                <li><a href="list.php"><img src="https://img.icons8.com/metro/26/5c4ac7/list.png"></a></li>
+            </ul>
+        </div>
         <div class="mt-3 mb-3">
             <h3>Explore Movie</h3>
             <form method="POST">
@@ -84,7 +91,7 @@ if (isset($_POST['search'])) {
                     $minus = $current - ($current - 1);
                 else {
                     $minus = $current - 5;
-                    echo '<li><a href="' . $url  . '1">1</a></li><li><p>...</p></li>';
+                    echo '<li><a href="' . $url  . '1">1</a></li><li><a>...</a></li>';
                 }
 
                 $max = $current + 5;
@@ -96,14 +103,16 @@ if (isset($_POST['search'])) {
                     echo "<li><a href='?page=" . $prev . "'> < </a></li>";
 
                 for ($i = $minus; $i <= $max; $i++) { ?>
-                    <li><a href="<?php echo $url . $i ?>" class="<?php echo $current == $i ? "active" : "" ?>"><?php echo $i ?></a></li>
+                    <li class="<?php echo $current == $i ? "active" : "" ?>"><a href="<?php echo $url . $i ?>"><?php echo $i ?></a></li>
                 <?php }
                 if ($total_page > 1) {
                 ?>
-                    <li><a href='<?php echo $url . $next ?>'>></a></li>
-
+                    <?php
+                    if ($current != $total_page) { ?>
+                        <li><a href='<?php echo $url . $next ?>'>></a></li>
+                    <?php } ?>
                     <li>
-                        <p>...</p>
+                        <a>...</a>
                     </li>
 
                     <li><a href="<?php echo $url . $total_page ?>"><?php echo $total_page ?></a></li>

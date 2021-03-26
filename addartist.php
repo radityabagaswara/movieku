@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert Movie</title>
+    <title>Add Artist - MovieKu</title>
     <link href="./assets/style/insert.css" rel="stylesheet">
     <link href="./assets/style/style.css" rel="stylesheet">
 

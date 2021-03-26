@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Movie</title>
+    <title>Edit Movie - MovieKu</title>
     <link href="./assets/style/insert.css" rel="stylesheet">
     <link href="./assets/style/style.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-
 </head>
 <?php
 include_once('./class/movie.php');
@@ -80,7 +77,7 @@ if (isset($_GET['success'])) {
                 </div>
                 <a style="margin-bottom: 20px" href="addartist.php">Don't see Artist name? Add Here!</a>
                 <div style="margin: 0 auto;">
-                    <button type='button' id='btntambahpemain'>Add Character</button>
+                    <button type='button' class="btn btn-secondary" id='btntambahpemain'>Add</button>
                 </div>
             </div>
 
@@ -106,7 +103,7 @@ if (isset($_GET['success'])) {
                                         <option value="Pembantu" <?php echo $value['character_role'] == 'Pembantu' ? "selected" : "" ?>>Pembantu</option>
                                         <option value="Cameo" <?php echo $value['character_role'] == 'Cameo' ? "selected" : "" ?>>Cameo</option>
                                     </select></td>
-                                <td style="text-align:center;"><button type='button' class='removenama'>Remove</button></td>
+                                <td style="text-align:center;"><button type='button' class='btn btn-danger removenama'>Remove</button></td>
                                 <input type='hidden' name='idpemain[]' value='<?php echo $value['artist_id'] ?>'>
                             </tr>
                         <?php } ?>
@@ -146,7 +143,7 @@ if (isset($_GET['success'])) {
                 ?>
             </div>
             <div class="button-submit">
-                <button value="submit" name="btn_submit" type="submit">Submit</button>
+                <button value="submit" class="btn btn-primary" name="btn_submit" type="submit">Submit</button>
             </div>
         </form>
     </div>

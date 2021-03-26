@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Genre Movie</title>
+    <title>Add Genre - MovieKu</title>
     <link href="./assets/style/insert.css" rel="stylesheet">
     <link href="./assets/style/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
@@ -20,10 +20,10 @@
                 <label>Genre Name</label>
                 <input type="text" name="genre[]" require>
             </div>
-            <button class="btn" id="add-more" type="button">Add More</button>
+            <button id="add-more" type="button" class="btn btn-secondary">Add More</button>
 
             <div class="button-submit">
-                <button value="submit" name="btn_submit" type="submit">Submit</button>
+                <button value="submit" name="btn_submit" type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
     </div>

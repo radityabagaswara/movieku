@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert Movie</title>
+    <title>Insert Movie - MovieKu</title>
     <link href="./assets/style/insert.css" rel="stylesheet">
     <link href="./assets/style/style.css" rel="stylesheet">
 
@@ -68,7 +68,7 @@ if (isset($_GET['success'])) {
                 </div>
                 <a style="margin-bottom: 20px" href="addartist.php">Don't see Artist name? Add Here!</a>
                 <div style="margin: 0 auto;">
-                    <button type='button' id='btntambahpemain'>Add Character</button>
+                    <button type='button' class="btn btn-secondary" id='btntambahpemain'>Add</button>
                 </div>
             </div>
 
@@ -120,7 +120,7 @@ if (isset($_GET['success'])) {
                 ?>
             </div>
             <div class="button-submit">
-                <button value="submit" name="btn_submit" type="submit">Submit</button>
+                <button value="submit" name="btn_submit" class="btn btn-primary" type="submit">Submit</button>
             </div>
         </form>
     </div>
@@ -145,7 +145,7 @@ if (isset($_GET['success'])) {
                     <option value="Pembantu" ${peran == 'Pembantu' ? "selected" : ""}>Pembantu</option>
                     <option value="Cameo" ${peran == 'Cameo' ? "selected" : ""}>Cameo</option>
                 </select></td>
-                <td style="text-align:center;"><button type='button' class='removenama'>Remove</button></td>
+                <td style="text-align:center;"><button type='button' class='btn btn-danger removenama'>Remove</button></td>
                 <input type='hidden' name='idpemain[]' value = '${idNama}'>
             </tr>
             `
