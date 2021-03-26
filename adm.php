@@ -42,7 +42,7 @@ if (isset($_GET['success'])) {
 <body>
     <div id="navbar"></div>
     <div class="container">
-        <div class="mt-3 mb-3">
+        <div class="mt-1 mb-3">
             <h3>Admin</h3>
             <form method="POST">
                 <div class="input-group mt-1">

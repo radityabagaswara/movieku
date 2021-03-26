@@ -46,7 +46,7 @@ if (isset($_POST['search'])) {
                 </ul>
             </div>
         </div>
-        <div class="mt-3 mb-3">
+        <div class="mt-1 mb-3">
             <h3>Explore Movie</h3>
             <form method="POST">
                 <div class="input-group mt-1">

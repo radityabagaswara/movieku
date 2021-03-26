@@ -1,3 +1,1 @@
 # movieku
-
-STEAL = MANDUL

@@ -42,7 +42,7 @@ if (isset($_POST['search'])) {
                 <li><a href="list.php"><img src="https://img.icons8.com/metro/26/5c4ac7/list.png"></a></li>
             </ul>
         </div>
-        <div class="mt-3 mb-3">
+        <div class="mt-1 mb-3">
             <h3>Explore Movie</h3>
             <form method="POST">
                 <div class="input-group mt-1">
